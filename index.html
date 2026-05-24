@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uber V2 • Professional Mobility</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap");
+
+      :root {
+        --accent: #00d4ff;
+      }
+
+      .tail-container {
+        font-family: "Inter", system-ui, sans-serif;
+      }
+
+      .heading-font {
+        font-family: "Space Grotesk", sans-serif;
+      }
+
+      .hero-bg {
+        background-image:
+          linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)),
+          url("https://picsum.photos/id/1015/2000/1200");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .nav-link {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .nav-link:hover {
+        color: #00d4ff;
+        transform: translateY(-1px);
+      }
+
+      .feature-card {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .feature-card:hover {
+        transform: translateY(-12px);
+        box-shadow: 0 25px 50px -12px rgb(0 212 255 / 0.15);
+      }
+
+      .pricing-card {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .premium-card {
+        border: 3px solid #00d4ff;
+        position: relative;
+      }
+
+      .premium-badge {
+        position: absolute;
+        top: -12px;
+        right: 24px;
+        background: #00d4ff;
+        color: black;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 4px 16px;
+        border-radius: 9999px;
+      }
+    </style>
+  </head>
+  <body class="tail-container bg-zinc-950 text-white overflow-x-hidden">
+    <!-- NAV -->
+    <nav
+      class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-lg border-b border-zinc-800"
+    >
+      <div
+        class="max-w-screen-2xl mx-auto px-8 py-5 flex items-center justify-between"
+      >
+        <div class="flex items-center gap-x-3">
+          <div
+            class="w-8 h-8 bg-[#00d4ff] rounded-2xl flex items-center justify-center text-black font-bold text-2xl leading-none pt-0.5"
+          >
+            V2
+          </div>
+          <span class="heading-font text-2xl font-semibold tracking-tighter"
+            >Uber V2</span
+          >
+        </div>
+
+        <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+          <a href="#home" onclick="navigateTo('home')" class="nav-link">Home</a>
+          <a href="#product" onclick="navigateTo('product')" class="nav-link"
+            >Product</a
+          >
+          <a href="#pricing" onclick="navigateTo('pricing')" class="nav-link"
+            >Plans</a
+          >
+          <a href="#trust" onclick="navigateTo('trust')" class="nav-link"
+            >Why V2</a
+          >
+        </div>
+
+        <div class="flex items-center gap-x-4">
+          <button
+            onclick="navigateTo('pricing')"
+            class="px-6 py-2.5 text-sm font-semibold border border-white/30 hover:border-white/70 rounded-2xl transition-colors"
+          >
+            Log in
+          </button>
+          <button
+            onclick="navigateTo('pricing')"
+            class="px-6 py-2.5 bg-white text-black text-sm font-semibold rounded-2xl hover:bg-[#00d4ff] hover:text-black transition-all"
+          >
+            Join V2
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- PAGE 1: HOME -->
+    <section id="home" class="hero-bg min-h-screen flex items-center pt-20">
+      <div
+        class="max-w-screen-2xl mx-auto px-8 pt-20 pb-16 grid md:grid-cols-2 gap-12 items-center"
+      >
+        <div class="space-y-8">
+          <div
+            class="inline-flex items-center gap-x-2 bg-white/10 backdrop-blur-md px-5 py-2 rounded-3xl text-sm"
+          >
+            <div
+              class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"
+            ></div>
+            Now serving Lagos • Abuja • Port Harcourt
+          </div>
+
+          <h1
+            class="heading-font text-7xl md:text-8xl font-semibold tracking-tighter leading-none"
+          >
+            Your City,<br />Synchronized.
+          </h1>
+
+          <p class="text-2xl text-zinc-300 max-w-lg">
+            The intelligent mobility platform that predicts your needs, saves
+            you time, and powers your workday.
+          </p>
+
+          <p class="text-zinc-400 text-lg">
+            Built for the modern professional who demands reliability.
+          </p>
+
+          <div class="flex flex-wrap gap-4">
+            <button
+              onclick="navigateTo('pricing')"
+              class="px-10 py-6 bg-[#00d4ff] hover:bg-[#00eaff] text-black text-xl font-semibold rounded-3xl transition-all active:scale-95 flex items-center gap-x-3"
+            >
+              Upgrade to V2 Priority
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+            <button
+              onclick="navigateTo('product')"
+              class="px-8 py-6 border border-white/40 hover:border-white text-white text-xl font-medium rounded-3xl transition-all"
+            >
+              See How It Works
+            </button>
+          </div>
+
+          <div class="flex items-center gap-x-8 pt-6">
+            <div class="flex items-center">
+              <img
+                src="https://picsum.photos/id/64/48/48"
+                class="w-7 h-7 rounded-full ring-2 ring-white object-cover"
+                alt=""
+              />
+              <img
+                src="https://picsum.photos/id/201/48/48"
+                class="w-7 h-7 rounded-full ring-2 ring-white object-cover -ml-3"
+                alt=""
+              />
+              <img
+                src="https://picsum.photos/id/201/48/48"
+                class="w-7 h-7 rounded-full ring-2 ring-white object-cover -ml-3"
+                alt=""
+              />
+            </div>
+            <div class="text-sm">
+              <div class="flex text-amber-400">★★★★★</div>
+              <div class="text-zinc-400">Trusted by 50,000+ professionals</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right side visual -->
+        <div class="hidden md:flex justify-end">
+          <div
+            class="bg-zinc-900/70 backdrop-blur-xl p-6 rounded-3xl border border-white/10 max-w-xs"
+          >
+            <div class="bg-zinc-800 rounded-2xl p-4 mb-6">
+              <div class="flex justify-between text-sm mb-4">
+                <div>Next ride</div>
+                <div class="text-emerald-400">On time</div>
+              </div>
+              <div class="text-4xl font-semibold mb-1">8:45 AM</div>
+              <div class="text-zinc-400">To Landmark HQ • Ikeja</div>
+            </div>
+
+            <div class="flex gap-4 text-sm">
+              <div class="flex-1 bg-zinc-800 rounded-2xl p-4">
+                <i class="fa-solid fa-car text-[#00d4ff]"></i>
+                <div class="mt-6 text-xs tracking-widest">DRIVER</div>
+                <div class="font-medium">Adekunle • 4.98</div>
+              </div>
+              <div class="flex-1 bg-zinc-800 rounded-2xl p-4">
+                <i class="fa-solid fa-bolt text-[#00d4ff]"></i>
+                <div class="mt-6 text-xs tracking-widest">ETA</div>
+                <div class="font-medium">11 min</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
+      >
+        <div class="text-xs tracking-widest text-zinc-500 mb-2">
+          SCROLL TO EXPLORE
+        </div>
+        <i class="fa-solid fa-chevron-down text-[#00d4ff] animate-bounce"></i>
+      </div>
+    </section>
+
+    <!-- PAGE 2: PRODUCT -->
+    <section id="product" class="py-24 bg-white text-zinc-900">
+      <div class="max-w-screen-2xl mx-auto px-8">
+        <div class="text-center mb-16">
+          <span
+            class="px-6 py-2 bg-[#00d4ff]/10 text-[#00d4ff] rounded-3xl text-sm font-semibold"
+            >INTELLIGENT MOBILITY</span
+          >
+          <h2
+            class="heading-font text-6xl font-semibold tracking-tighter mt-6 mb-4"
+          >
+            Designed Around Your Day.
+          </h2>
+          <p class="max-w-2xl mx-auto text-xl text-zinc-600">
+            Uber V2 isn't just a ride; it’s an ecosystem that adapts to your
+            life in real-time.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Feature 1 -->
+          <div class="feature-card bg-zinc-100 p-10 rounded-3xl">
+            <div
+              class="h-12 w-12 bg-[#00d4ff] text-black rounded-2xl flex items-center justify-center text-3xl mb-8"
+            >
+              📅
+            </div>
+            <h3 class="text-3xl font-semibold mb-4">Predictive Scheduling</h3>
+            <p class="text-zinc-600 text-[17px] leading-relaxed">
+              We learn your routine. Whether it’s your morning commute or your
+              Friday airport run, your ride is waiting before you even open the
+              app.
+            </p>
+            <div
+              class="mt-12 pt-12 border-t border-zinc-200 text-xs uppercase tracking-widest text-zinc-500"
+            >
+              Learns • Anticipates • Prepares
+            </div>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="feature-card bg-zinc-100 p-10 rounded-3xl">
+            <div
+              class="h-12 w-12 bg-[#00d4ff] text-black rounded-2xl flex items-center justify-center text-3xl mb-8"
+            >
+              🛣️
+            </div>
+            <h3 class="text-3xl font-semibold mb-4">Priority Reliability</h3>
+            <p class="text-zinc-600 text-[17px] leading-relaxed">
+              Our AI-optimized routing avoids traffic before it builds, ensuring
+              you arrive on time, every time, without the surge-pricing stress.
+            </p>
+            <div
+              class="mt-12 pt-12 border-t border-zinc-200 text-xs uppercase tracking-widest text-zinc-500"
+            >
+              99.9% On-time • No surprises
+            </div>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="feature-card bg-zinc-100 p-10 rounded-3xl">
+            <div
+              class="h-12 w-12 bg-[#00d4ff] text-black rounded-2xl flex items-center justify-center text-3xl mb-8"
+            >
+              🔗
+            </div>
+            <h3 class="text-3xl font-semibold mb-4">Unified Mobility</h3>
+            <p class="text-zinc-600 text-[17px] leading-relaxed">
+              Seamlessly sync your rides, your meal deliveries, and your
+              corporate schedule into one frictionless interface.
+            </p>
+            <div
+              class="mt-12 pt-12 border-t border-zinc-200 text-xs uppercase tracking-widest text-zinc-500"
+            >
+              Rides • Deliveries • Calendar
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="mt-20 bg-zinc-900 text-white rounded-3xl p-16 flex flex-col md:flex-row gap-12 items-center"
+        >
+          <div class="flex-1">
+            <img
+              src="https://picsum.photos/id/1015/800/600"
+              alt="App Interface"
+              class="rounded-3xl shadow-2xl"
+            />
+          </div>
+          <div class="flex-1 space-y-6">
+            <h3 class="text-4xl font-semibold">
+              Your entire workday.<br />One elegant app.
+            </h3>
+            <ul class="space-y-6 text-lg">
+              <li class="flex gap-4">
+                <span class="text-emerald-400">✓</span> Smart calendar
+                integration
+              </li>
+              <li class="flex gap-4">
+                <span class="text-emerald-400">✓</span> Automatic meeting
+                location detection
+              </li>
+              <li class="flex gap-4">
+                <span class="text-emerald-400">✓</span> Real-time driver ETA
+                with confidence score
+              </li>
+              <li class="flex gap-4">
+                <span class="text-emerald-400">✓</span> Corporate expense
+                auto-capture
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 3: PRICING -->
+    <section id="pricing" class="py-24 bg-zinc-950">
+      <div class="max-w-screen-2xl mx-auto px-8">
+        <div class="text-center mb-16">
+          <h2 class="heading-font text-6xl font-semibold tracking-tighter mb-4">
+            Choose the Plan That Fits Your Workflow.
+          </h2>
+          <p class="text-zinc-400 text-xl">
+            Flexible options for every professional lifestyle.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 max-w-5xl mx-auto gap-8">
+          <!-- Basic -->
+          <div
+            class="pricing-card bg-zinc-900 border border-zinc-700 rounded-3xl p-10"
+          >
+            <div class="text-zinc-400 mb-2">STANDARD</div>
+            <h3 class="text-4xl font-semibold">Uber Basic</h3>
+            <div class="mt-8 space-y-6">
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                <div>Standard reliable service</div>
+              </div>
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                <div>Pay-as-you-go pricing</div>
+              </div>
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                <div>Best for occasional trips</div>
+              </div>
+            </div>
+            <button
+              onclick="alert('Basic plan selected - demo only')"
+              class="mt-12 w-full py-6 border border-white/30 hover:bg-white/5 rounded-2xl font-semibold transition-colors"
+            >
+              Select Basic
+            </button>
+          </div>
+
+          <!-- Premium -->
+          <div
+            class="pricing-card premium-card bg-zinc-900 rounded-3xl p-10 relative"
+          >
+            <div class="premium-badge">MOST POPULAR</div>
+            <div class="text-[#00d4ff] font-semibold mb-2">PREMIUM</div>
+            <h3 class="text-4xl font-semibold">Uber V2 Priority</h3>
+            <div class="text-5xl font-semibold mt-3 mb-1">₦12,500</div>
+            <div class="text-zinc-400">per month</div>
+
+            <div class="mt-10 space-y-6">
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-check text-[#00d4ff] mt-1"></i>
+                <div>Predictive booking &amp; Priority matching</div>
+              </div>
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-check text-[#00d4ff] mt-1"></i>
+                <div>Zero-fee on all deliveries</div>
+              </div>
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-check text-[#00d4ff] mt-1"></i>
+                <div>Dedicated VIP support line</div>
+              </div>
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-check text-[#00d4ff] mt-1"></i>
+                <div>Flat monthly subscription</div>
+              </div>
+            </div>
+
+            <button
+              onclick="alert('Thank you! Welcome to Uber V2 Priority (demo)')"
+              class="mt-12 w-full py-6 bg-[#00d4ff] hover:bg-[#00eaff] text-black font-semibold rounded-2xl text-lg transition-all active:scale-95"
+            >
+              Upgrade to V2
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 4: TRUST -->
+    <section id="trust" class="py-24 bg-white text-zinc-900">
+      <div class="max-w-screen-2xl mx-auto px-8">
+        <div class="grid md:grid-cols-12 gap-16 items-center">
+          <div class="md:col-span-5">
+            <h2
+              class="heading-font text-6xl font-semibold tracking-tighter leading-none"
+            >
+              Why Professionals Choose V2.
+            </h2>
+
+            <div class="mt-12 space-y-12">
+              <div>
+                <div class="text-6xl font-semibold text-[#00d4ff]">99.9%</div>
+                <div class="text-xl">On-time arrival rate for V2 members</div>
+              </div>
+              <div>
+                <div class="text-6xl font-semibold">50,000+</div>
+                <div class="text-xl">Business commuters trust us daily</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:col-span-7">
+            <div class="bg-zinc-100 rounded-3xl p-10">
+              <div class="italic text-2xl leading-relaxed">
+                “Uber V2 has completely eliminated the morning anxiety of my
+                commute. The app just knows where I need to be, and the priority
+                matching has never let me down for a client meeting.”
+              </div>
+              <div class="mt-10 flex items-center gap-4">
+                <div class="w-12 h-12 bg-zinc-300 rounded-2xl"></div>
+                <div>
+                  <div class="font-semibold">Sarah J.</div>
+                  <div class="text-zinc-500">
+                    Senior Consultant, McKinsey Lagos
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Final CTA -->
+        <div
+          class="mt-32 bg-zinc-950 text-white rounded-3xl p-16 md:p-24 text-center"
+        >
+          <h2 class="heading-font text-6xl font-semibold tracking-tighter mb-6">
+            Ready to synchronize your day?
+          </h2>
+          <p class="text-xl text-zinc-400 max-w-md mx-auto mb-10">
+            Join thousands of professionals who no longer worry about getting
+            where they need to be.
+          </p>
+          <button
+            onclick="alert('Welcome to Uber V2! (Demo complete)')"
+            class="px-16 py-8 bg-[#00d4ff] text-black text-2xl font-semibold rounded-3xl hover:scale-105 transition-transform"
+          >
+            Join Uber V2 Today
+          </button>
+          <div class="text-xs text-zinc-500 mt-8">
+            No credit card required • Cancel anytime
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-16 border-t border-zinc-900">
+      <div class="max-w-screen-2xl mx-auto px-8 text-zinc-400 text-sm">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="flex items-center gap-x-3 mb-6 md:mb-0">
+            <div
+              class="w-6 h-6 bg-[#00d4ff] rounded-2xl flex items-center justify-center text-black text-xl"
+            >
+              V2
+            </div>
+            <span class="heading-font text-white text-2xl">Uber V2</span>
+          </div>
+
+          <div class="flex gap-x-8">
+            <a href="#" class="hover:text-white transition-colors">Safety</a>
+            <a href="#" class="hover:text-white transition-colors">Business</a>
+            <a href="#" class="hover:text-white transition-colors">Careers</a>
+            <a href="#" class="hover:text-white transition-colors">Contact</a>
+          </div>
+
+          <div class="mt-8 md:mt-0 text-xs">
+            © 2026 Uber V2 Nigeria. All rights reserved.
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function navigateTo(section) {
+        document.getElementById(section).scrollIntoView({ behavior: "smooth" });
+      }
+
+      // Tailwind script already loaded
+      console.log(
+        "%cUber V2 Website Loaded Successfully",
+        "color:#00d4ff; font-size:14px; font-weight:600",
+      );
+
+      // Keyboard shortcut hint
+      document.addEventListener("keydown", function (e) {
+        if (e.metaKey && e.key === "k") {
+          e.preventDefault();
+          alert("Command palette would open here in the real product.");
+        }
+      });
+    </script>
+  </body>
+</html>
